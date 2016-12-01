@@ -1,0 +1,24 @@
+/**
+ * Created by luoran on 2016/12/1.
+ */
+require.config({
+    paths:{
+        'angular':'node_modules/angular/angular.min',
+        'angular-ui-bootstrap':'node_modules/angular-ui-bootstrap/ui-bootstrap-tpls.min',
+    },
+    shim:{
+        "angular":{
+            exports:"angular"
+        },
+        "angular-route":{
+            exports:"angular-route"
+        }
+    }
+});
+require([
+    'angular',
+    './modules/app.module',
+    './modules/user/user.index'
+],function(angular){
+    angular.bootstrap(document.body,['app']);
+})
